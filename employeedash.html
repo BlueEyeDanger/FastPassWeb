@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Southwest Airlines - Employee Dashboard</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="Images/sw.png" alt="Southwest Airlines Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="#verify-fastpass">Verify FastPass</a></li>
+                    <li><a href="#employee-info">Employee Info</a></li>
+                    <li></li>
+                    <button onclick="window.location.href='home.html'" class='button'>Back to Home</button>
+                    <li><button class="button logout-btn">Logout</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Employee Dashboard</h1>
+        
+        <section id="verify-fastpass" class="dashboard-card">
+            <h2>Verify Customer FastPass</h2>
+            <form id="fastpass-verification-form">
+                <input type="text" id="fastpass-id" placeholder="Enter FastPass ID" required>
+                <button type="submit" class="button">Verify FastPass</button>
+            </form>
+            <div id="verification-result"></div>
+        </section>
+
+        <section id="employee-info" class="dashboard-card">
+            <h2>Employee Information</h2>
+            <p>Name: <span id="employee-name">John Doe</span></p>
+            <p>ID: <span id="employee-id">SW12345</span></p>
+            <p>Position: <span id="employee-position">Gate Agent</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Employee Resources</h3>
+                <ul>
+                    <li><a href="#">HR Portal</a></li>
+                    <li><a href="#">IT Support</a></li>
+                    <li><a href="#">Payroll</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Policies</h3>
+                <ul>
+                    <li><a href="#">Code of Conduct</a></li>
+                    <li><a href="#">Safety Guidelines</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Southwest Airlines Co. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.logout-btn').addEventListener('click', function() {
+            alert('Logout functionality to be implemented');
+            window.location.href = 'home.html#login';
+        });
+
+        document.getElementById('fastpass-verification-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const fastpassId = document.getElementById('fastpass-id').value;
+            // This is where you would typically make an API call to verify the FastPass
+            // For this example, we'll just simulate a response
+            const isValid = Math.random() < 0.7; // 70% chance of being valid
+            const resultDiv = document.getElementById('verification-result');
+            if (isValid) {
+                resultDiv.innerHTML = `<p class="valid-fastpass">FastPass ${fastpassId} is valid.</p>`;
+            } else {
+                resultDiv.innerHTML = `<p class="invalid-fastpass">FastPass ${fastpassId} is invalid or expired.</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
