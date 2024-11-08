@@ -22,6 +22,7 @@
             </nav>
         </div>
     </header>
+
     <main>
         <h1>FastPass Purchase Options</h1>
         <section id="fastpass-options">
@@ -33,7 +34,7 @@
                     <li>One complimentary drink</li>
                 </ul>
                 <p class="price">$25</p>
-                <a href="#" class="button">Purchase</a>
+                <button onclick="addToCart('Single Flight FastPass', 25)" class="button">Add to Cart</button>
             </div>
             <div class="option">
                 <h2>Round Trip FastPass</h2>
@@ -44,7 +45,7 @@
                     <li>Free Wi-Fi for both flights</li>
                 </ul>
                 <p class="price">$45</p>
-                <a href="#" class="button">Purchase</a>
+                <button onclick="addToCart('Round Trip FastPass', 45)" class="button">Add to Cart</button>
             </div>
             <div class="option">
                 <h2>Monthly FastPass</h2>
@@ -56,11 +57,19 @@
                     <li>Access to FastPass lounges</li>
                 </ul>
                 <p class="price">$199/month</p>
-                <a href="#" class="button">Purchase</a>
+                <button onclick="addToCart('Monthly FastPass', 199)" class="button">Add to Cart</button>
             </div>
         </section>
+
+        <section id="cart">
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <p><strong>Total: $<span id="cart-total">0</span></strong></p>
+            <a href="checkout.html" class="button">Proceed to Checkout</a>
+        </section>
     </main>
-    <footer>
+
+  <!--  <footer>
         <div class="footer-container">
             <div class="footer-column">
                 <h3>About FastPass</h3>
@@ -90,6 +99,88 @@
         <div class="footer-bottom">
             <p>&copy; 2024 Southwest Airlines Co. All Rights Reserved.</p>
         </div>
-    </footer>
+    </footer>-->
+
+    <script>
+    let cart = [];
+    let total = 0;
+
+    function addToCart(itemName, price) {
+      // Add item to cart array
+      cart.push({ itemName, price });
+
+      // Update total price
+      total += price;
+
+      // Display the new cart total
+      document.getElementById('cart-total').innerText = total;
+
+      // Display cart items
+      const cartItems = document.getElementById('cart-items');
+      const newItem = document.createElement('p');
+      newItem.innerText = `${itemName} - $${price}`;
+      cartItems.appendChild(newItem);
+    }
+    </script>
+</body>
+</html>
+
+<footer>
+    <!-- Footer Top Section -->
+    <div class="footer-top">
+        <div class="footer-container">
+            <!-- Customer Service Section -->
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="https://www.southwest.com/contact-us">Contact Us</a></li>
+                    <li><a href="https://www.southwest.com/html/customer-service/baggage/">Baggage Policies</a></li>
+                    <li><a href="https://www.southwest.com/html/customer-service/faqs.html">FAQs</a></li>
+                    <li><a href="https://www.southwest.com/html/customer-service/">Help Center</a></li>
+                </ul>
+            </div>
+
+            <!-- About Southwest Section -->
+            <div class="footer-column">
+                <h3>About Southwest</h3>
+                <ul>
+                    <li><a href="https://careers.southwestair.com/">Careers</a></li>
+                    <li><a href="https://www.southwest.com/html/about-southwest/">Company Information</a></li>
+                    <li><a href="https://www.southwest.com/html/southwest-difference/">Southwest Difference</a></li>
+                    <li><a href="https://community.southwest.com/">Community</a></li>
+                </ul>
+            </div>
+
+            <!-- Policies Section -->
+            <div class="footer-column">
+                <h3>Policies</h3>
+                <ul>
+                    <li><a href="https://www.southwest.com/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="https://www.southwest.com/html/terms-and-conditions/">Terms & Conditions</a></li>
+                    <li><a href="https://www.southwest.com/html/accessibility/">Accessibility</a></li>
+                    <li><a href="https://www.southwest.com/html/corporate-responsibility/">Corporate Responsibility</a></li>
+                </ul>
+            </div>
+
+            <!-- Connect with Us Section -->
+            <div class="footer-column">
+                <h3>Connect with Us</h3>
+                <ul class="social-media">
+                    <li><a href="https://www.facebook.com/SouthwestAir" target="_blank">Facebook</a></li>
+                    <li><a href="https://twitter.com/SouthwestAir" target="_blank">Twitter</a></li>
+                    <li><a href="https://www.instagram.com/southwestair/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.linkedin.com/company/southwest-airlines" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom Section -->
+    <div class="footer-bottom">
+        <div class="footer-container">
+            <p>&copy; 2024 Southwest Airlines Co. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

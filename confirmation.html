@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastPass Purchase Confirmation - Southwest Airlines</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="Images/sw.png" alt="Southwest Airlines Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#fastpass">FastPass</a></li>
+                    <li><a href="fastpass.html">Purchase</a></li>
+                    <li><a href="my-fastpasses.html">My FastPasses</a></li>
+                    <li><a href="employeedash.html" class="employee-dash-btn">Employee Dashboard</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>Thank You for Your Purchase!</h1>
+        <section id="confirmation-details">
+            <h2>Purchase Confirmation</h2>
+            <p>Thank you for purchasing a <span id="fastpass-type"></span>!</p>
+            <p>The total amount charged was: <strong>$<span id="fastpass-price"></span></strong></p>
+            <p>Your FastPass will be sent to your email shortly. You can also manage your FastPasses on the <a href="my-fastpasses.html">My FastPasses</a> page.</p>
+            <p>We hope you have a fantastic trip with Southwest Airlines!</p>
+        </section>
+
+        <section id="order-summary">
+            <h3>Order Summary</h3>
+            <ul>
+                <li>FastPass Type: <strong><span id="summary-type"></span></strong></li>
+                <li>Total Price: <strong>$<span id="summary-price"></span></strong></li>
+            </ul>
+        </section>
+
+        <a href="index.html" class="button">Return to Home</a>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About FastPass</h3>
+                <ul>
+                    <li><a href="fastpass.html">How it Works</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Southwest Airlines Co. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+    // Assuming cart data is passed via sessionStorage
+    document.addEventListener("DOMContentLoaded", function() {
+      const fastpassType = sessionStorage.getItem('fastpassType');
+      const fastpassPrice = sessionStorage.getItem('fastpassPrice');
+
+      if (fastpassType && fastpassPrice) {
+        document.getElementById('fastpass-type').innerText = fastpassType;
+        document.getElementById('fastpass-price').innerText = fastpassPrice;
+        document.getElementById('summary-type').innerText = fastpassType;
+        document.getElementById('summary-price').innerText = fastpassPrice;
+      } else {
+        window.location.href = 'index.html';
+      }
+    });
+    </script>
+</body>
+</html>

@@ -92,10 +92,10 @@ nav {
 .employee-dash-btn {
     background-color: var(--sw-blue);
     color: white !important;
-    padding: 7.2px 10.8px; /* 10% smaller than original 8px 12px */
+    padding: 7.2px 10.8px;
     border-radius: 4px;
     transition: background-color 0.3s ease;
-    font-size: 14.4px; /* 10% smaller than original 16px */
+    font-size: 14.4px;
 }
 
     .employee-dash-btn:hover {

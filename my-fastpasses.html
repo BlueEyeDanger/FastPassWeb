@@ -1,96 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Southwest Airlines - My FastPasses</title>
-    <link rel="stylesheet" href="css.css">
-</head>
-<body>
-    <header class="sticky-header">
-        <div class="header-container">
-            <div class="logo">
-                <img src="Images/sw.png" alt="Southwest Airlines Logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html#fastpass">FastPass</a></li>
-                    <li><a href="fastpass.html">Purchase</a></li>
-                    <li><a href="my-fastpasses.html">My FastPasses</a></li>
-                    <li><a href="employeedash.html" class="employee-dash-btn">Employee Dashboard</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <main>
-        <section id="my-fastpasses">
-            <h1>My FastPasses</h1>
-            <p>View and manage your current FastPasses below.</p>
-            <div id="fastpass-list">
-                <!-- FastPass items will be dynamically inserted here -->
-            </div>
-        </section>
-        <section id="no-fastpasses" style="display: none;">
-            <h2>No FastPasses Found</h2>
-            <p>You currently don't have any active FastPasses.</p>
-            <a href="fastpass.html" class="button">Purchase FastPass</a>
-        </section>
-    </main>
-    <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>About FastPass</h3>
-                <ul>
-                    <li><a href="fastpass.html">How it Works</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">FAQs</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Customer Service</h3>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Feedback</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Legal</h3>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Accessibility</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Southwest Airlines Co. All Rights Reserved.</p>
-        </div>
-    </footer>
-    <script>
-        // Sample data for demonstration purposes
-        const customerFastpasses = [
-            { type: 'Priority Boarding', expiration: '2024-12-31' },
-            { type: 'Complimentary Premium Drink', expiration: '2024-11-15' },
-            { type: 'Free Inflight Internet', expiration: '2024-10-01' }
-        ];
 
-        const fastpassList = document.getElementById('fastpass-list');
-        const noFastpasses = document.getElementById('no-fastpasses');
 
-        if (customerFastpasses.length > 0) {
-            customerFastpasses.forEach(pass => {
-                const passElement = document.createElement('div');
-                passElement.classList.add('fastpass-item');
-                passElement.innerHTML = `
-                    <h3>${pass.type}</h3>
-                    <p>Expiration: ${pass.expiration}</p>
-                `;
-                fastpassList.appendChild(passElement);
-            });
-        } else {
-            noFastpasses.style.display = 'block';
-        }
-    </script>
-</body>
-</html>
+    <link rel='stylesheet' href='css.css'>
+
+    <body>
+
+
+        <header class='sticky-header'>
+            <div class='header-container'>
+                <div class='logo'><img src='Images/sw.png' alt='Southwest Airlines Logo'></div>
+
+
+
+                <nav>
+                    <ul>
+                        <li><a href='index.html#fastpass'>FastPass<a /></li>
+                        <li><a href='fastpass.html'>Purchase<a /></li>
+                        <li><a href='my-fastpasses.html'>My FastPasses<a /></li>
+                        <img src='Images/plane2.png' alt='Plane Icon' class='plane-icon'>
+                        <li><a href='employeedash.html' class='employee-dash-btn'>Employee Dashboard<a /></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+
+        <main>
+
+
+            <section id=my-fastpasses'>
+                <h1>
+                    My FastPasses<h1 />
+                    <p>View and manage your current FastPasses below.<p />
+                    <div id=fastpass-list>
+
+                    </div>
+            </section>
+
+
+            <section id=no-fastpasses style=display: none;><!-- No fast passes found section --><h2>No FastPasses Found<h2 /><p>You currently don't have any active FastPasses.<p /><a href=fastpass.html class=button>Purchase FastPass<a /></section>
+        </main>
+
+
+        <!-- <footer>
+         <footer>
+             <div class="footer-container">
+                 <div class="footer-column">
+                     <h3>About FastPass</h3>
+                     <ul>
+                         <li><a href="fastpass.html">How it Works</a></li>
+                         <li><a href="#">Terms & Conditions</a></li>
+                         <li><a href="#">FAQs</a></li>
+                     </ul>
+                 </div>
+                 <div class="footer-column">
+                     <h3>Customer Service</h3>
+                     <ul>
+                         <li><a href="#">Contact Us</a></li>
+                         <li><a href="#">Support</a></li>
+                         <li><a href="#">Feedback</a></li>
+                     </ul>
+                 </div>
+                 <div class="footer-column">
+                     <h3>Legal</h3>
+                     <ul>
+                         <li><a href="#">Privacy Policy</a></li>
+                         <li><a href="#">Terms of Use</a></li>
+                         <li><a href="#">Accessibility</a></li>
+                     </ul>
+                 </div>
+             </div>
+
+             <div class="footer-bottom">
+                 <p>&copy; 2024 Southwest Airlines Co. All Rights Reserved.</p>
+             </div>
+
+         </footer>
+         <p>&copy; 2024 Southwest Airlines Co. All Rights Reserved.</p>
+     </footer>-->
+
+
+        <footer>
+            <!-- Footer Top Section -->
+            <div class="footer-top">
+                <div class="footer-container">
+                    <!-- Customer Service Section -->
+                    <div class="footer-column">
+                        <h3>Customer Service</h3>
+                        <ul>
+                            <li><a href="https://www.southwest.com/contact-us">Contact Us</a></li>
+                            <li><a href="https://www.southwest.com/html/customer-service/baggage/">Baggage Policies</a></li>
+                            <li><a href="https://www.southwest.com/html/customer-service/faqs.html">FAQs</a></li>
+                            <li><a href="https://www.southwest.com/html/customer-service/">Help Center</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- About Southwest Section -->
+                    <div class="footer-column">
+                        <h3>About Southwest</h3>
+                        <ul>
+                            <li><a href="https://careers.southwestair.com/">Careers</a></li>
+                            <li><a href="https://www.southwest.com/html/about-southwest/">Company Information</a></li>
+                            <li><a href="https://www.southwest.com/html/southwest-difference/">Southwest Difference</a></li>
+                            <li><a href="https://community.southwest.com/">Community</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Policies Section -->
+                    <div class="footer-column">
+                        <h3>Policies</h3>
+                        <ul>
+                            <li><a href="https://www.southwest.com/privacy-policy">Privacy Policy</a></li>
+                            <li><a href="https://www.southwest.com/html/terms-and-conditions/">Terms & Conditions</a></li>
+                            <li><a href="https://www.southwest.com/html/accessibility/">Accessibility</a></li>
+                            <li><a href="https://www.southwest.com/html/corporate-responsibility/">Corporate Responsibility</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Connect with Us Section -->
+                    <div class="footer-column">
+                        <h3>Connect with Us</h3>
+                        <ul class="social-media">
+                            <li><a href="https://www.facebook.com/SouthwestAir" target="_blank">Facebook</a></li>
+                            <li><a href="https://twitter.com/SouthwestAir" target="_blank">Twitter</a></li>
+                            <li><a href="https://www.instagram.com/southwestair/" target="_blank">Instagram</a></li>
+                            <li><a href="https://www.linkedin.com/company/southwest-airlines" target="_blank">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom Section -->
+            <div class="footer-bottom">
+                <div class="footer-container">
+                    <p>&copy; 2024 Southwest Airlines Co. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Sample data for demonstration purposes
+            const customerFastpasses = [
+                { type: 'Priority Boarding', expiration: '2024-12-31' },
+                { type: 'Complimentary Premium Drink', expiration: '2024-11-15' },
+                { type: 'Free Inflight Internet', expiration: '2024-10-01' }
+            ];
+
+            const fastpassList = document.getElementById('fastpass-list');
+            const noFastpasses = document.getElementById('no-fastpasses');
+
+            if (customerFastpasses.length > 0) {
+                customerFastpasses.forEach(pass => {
+                    const passElement = document.createElement('div');
+                    passElement.classList.add('fastpass-item');
+                    passElement.innerHTML = `
+<h3>${pass.type}</h3>
+// Dynamically insert expiration date
+<p>Expiration: ${pass.expiration}</p>`;
+                    fastpassList.appendChild(passElement);
+                });
+            } else {
+                noFastpasses.style.display = 'block';
+            }
+}
+}
+}
+}
+}
+}
+
+
+
